@@ -1,0 +1,8 @@
+/api-env
+/db.sqlite3
+/.env
+/.vscode
+__pycache__/
+*.log
+*.pot
+*.pyc
