@@ -4,7 +4,7 @@ from rest_framework import status
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticated,  IsAdminUser
+from rest_framework.permissions import IsAuthenticated,  IsAdminUser, allow_any
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 # user data api
@@ -21,3 +21,4 @@ class UserData(viewsets.ReadOnlyModelViewSet):
 
 class RegisterUserAPIView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
+    permission_classes = [allow_any]
