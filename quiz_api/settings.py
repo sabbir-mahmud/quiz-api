@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # third party apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
 
     # my apps
     'apps.quiz',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -146,6 +148,8 @@ SIMPLE_JWT = {
     'TOKEN_USER_CLASS': 'rest_framework_simplejwt.models.TokenUser',
 
 }
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 # Internationalization
